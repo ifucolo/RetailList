@@ -16,7 +16,7 @@ buildscript {
 }
 
 tasks.register("runOnGitHub") {
-    dependsOn(":app:lint", ":app:testDebugUnitTest")  // 2 ==> CUSTOMIZE THIS LINE
+    dependsOn(":app:testDebugUnitTest")  // 2 ==> CUSTOMIZE THIS LINE
     description = "./gradlew runOnGitHub test# runs on GitHub Action"
 }
 
