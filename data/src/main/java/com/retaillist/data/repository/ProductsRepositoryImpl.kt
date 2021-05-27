@@ -54,30 +54,4 @@ class ProductsRepositoryImpl @Inject constructor(
             e.mapThrowable()
         }
     }
-
-    override suspend fun updateProduct(product: Product): ResultRequired<Product> {
-        return try {
-            val payload = ProductMapper.mapToPayload(product = product)
-
-            val response = productsApi.updateProduct(
-                productId = product.id.value,
-                body = payload
-            ).mapRawResponse()
-
-            return when(response) {
-                is RemoteResponse.Success -> {
-                    val products = ProductMapper.map(response.body)
-
-                    ResultRequired.Success(
-                        result = products
-                    )
-                }
-                is RemoteResponse.Error -> {
-                    response.mapErrorToResultRequired()
-                }
-            }
-        } catch (e: Throwable) {
-            e.mapThrowable()
-        }
-    }
 }

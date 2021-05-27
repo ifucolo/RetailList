@@ -7,5 +7,4 @@ import com.retaillist.domain.model.ResultRequired
 interface ProductsRepository {
     suspend fun getProducts(): ResultRequired<List<Product>>
     suspend fun getProductDetail(productId: ProductId): ResultRequired<Product>
-    suspend fun updateProduct(product: Product): ResultRequired<Product>
 }

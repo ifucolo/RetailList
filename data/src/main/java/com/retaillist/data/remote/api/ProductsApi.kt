@@ -14,7 +14,4 @@ interface ProductsApi {
 
     @GET("/product/{productId}")
     suspend fun getProductById(@Path("productId") productId: String): Response<ProductPayload>
-
-    @PUT("/product/{productId}")
-    suspend fun updateProduct(@Path("productId") productId: String, @Body body: ProductPayload): Response<ProductPayload>
 }

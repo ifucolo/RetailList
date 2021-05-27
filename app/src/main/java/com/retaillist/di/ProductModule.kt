@@ -7,7 +7,6 @@ import com.retaillist.domain.repository.ProductsRepository
 import com.retaillist.domain.usecase.*
 import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 
@@ -26,9 +25,6 @@ interface ProductModule {
 
     @Binds
     fun providesGetProducts(impl: GetProductsImpl): GetProducts
-
-    @Binds
-    fun providesUpdateProduct(impl: UpdateProductImpl): UpdateProduct
 
     @Binds
     fun providesProductReviews(impl: ProductReviewImpl): ProductReviews
