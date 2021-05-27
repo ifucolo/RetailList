@@ -1,28 +1,28 @@
 package com.retaillist.viewmodel
-
-import com.nhaarman.mockito_kotlin.doReturn
-import com.nhaarman.mockito_kotlin.mock
-import com.nhaarman.mockito_kotlin.whenever
-import com.retaillist.domain.model.ResultRequired
-import com.retaillist.domain.usecase.GetProductDetail
-import com.retaillist.domain.usecase.ProductReviews
-import com.retaillist.productIdStub
-import com.retaillist.productStub
-import com.retaillist.ui.feature.detail.ProductDetailViewModel
-import com.retaillist.util.instantTaskExecutorRule
-import junit.framework.Assert.assertEquals
-import junit.framework.Assert.assertTrue
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.toList
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.test.runBlockingTest
-import org.jetbrains.spek.api.dsl.context
-import org.jetbrains.spek.api.dsl.describe
-import org.jetbrains.spek.api.dsl.it
-import org.jetbrains.spek.subject.SubjectSpek
-import org.junit.platform.runner.JUnitPlatform
-import org.junit.runner.RunWith
+//
+//import com.nhaarman.mockito_kotlin.doReturn
+//import com.nhaarman.mockito_kotlin.mock
+//import com.nhaarman.mockito_kotlin.whenever
+//import com.retaillist.domain.model.ResultRequired
+//import com.retaillist.domain.usecase.GetProductDetail
+//import com.retaillist.domain.usecase.ProductReviews
+//import com.retaillist.productIdStub
+//import com.retaillist.productStub
+//import com.retaillist.ui.feature.detail.ProductDetailViewModel
+//import com.retaillist.util.instantTaskExecutorRule
+//import junit.framework.Assert.assertEquals
+//import junit.framework.Assert.assertTrue
+//import kotlinx.coroutines.ExperimentalCoroutinesApi
+//import kotlinx.coroutines.delay
+//import kotlinx.coroutines.flow.toList
+//import kotlinx.coroutines.launch
+//import kotlinx.coroutines.test.runBlockingTest
+//import org.jetbrains.spek.api.dsl.context
+//import org.jetbrains.spek.api.dsl.describe
+//import org.jetbrains.spek.api.dsl.it
+//import org.jetbrains.spek.subject.SubjectSpek
+//import org.junit.platform.runner.JUnitPlatform
+//import org.junit.runner.RunWith
 
 
 //Not working because of an issue with launch scope
