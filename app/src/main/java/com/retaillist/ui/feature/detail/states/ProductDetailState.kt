@@ -45,11 +45,11 @@ fun ProductDetailState(
 
     val openReviewDialog = remember { mutableStateOf(false)}
     val productId: ProductId = productDetailViewModelState.product.id
-
+    val hasButtonReview = productReviewViewModelState is ProductDetailViewModel.ProductReviewViewModelState.Reviews
     Box() {
         LazyColumn(
             verticalArrangement = Arrangement.spacedBy(margin16),
-            modifier = Modifier.padding(bottom = buttonBottomMargin).fillMaxWidth()
+            modifier = Modifier.padding(bottom = if (hasButtonReview) buttonBottomMargin else 0.dp).fillMaxWidth()
         ) {
             item {
                 ImageHero(

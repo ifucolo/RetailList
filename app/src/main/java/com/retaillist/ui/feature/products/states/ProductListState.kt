@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -145,7 +146,7 @@ fun ProductListComponent(
 ) {
     LazyVerticalGrid(
         cells = GridCells.Fixed(count = 2),
-        contentPadding = PaddingValues(margin8, margin8, margin8, margin8)
+        modifier = Modifier.padding(start = margin16, top = margin16)
     ) {
         items(state.list) { itemProduct ->
             ProductItem(
@@ -167,26 +168,22 @@ fun ProductItem(
         verticalArrangement =  Arrangement.spacedBy(4.dp),
         modifier = Modifier
             .fillMaxWidth()
+            .padding(end = margin16, bottom = margin16)
+            .clip(shape = shapes.small)
             .clickable {
                 onProductClick.invoke(product)
             }
     ) {
         ImageProductList(product.imgUrl)
         Text(
-            text = product.name,
-            style = MaterialTheme.typography.h3,
+            text = product.name.capitalize(),
+            style = MaterialTheme.typography.h2,
             color = MaterialTheme.colors.onBackground,
             textAlign = TextAlign.Left
         )
         Text(
-            text = product.description,
-            style = MaterialTheme.typography.h3,
-            color = MaterialTheme.colors.onBackground,
-            textAlign = TextAlign.Left
-        )
-        Text(
-            text = product.price.toString(),//if have time apply currency
-            style = MaterialTheme.typography.h3,
+            text = product.getPriceWithCurrency(),//if have time apply currency
+            style = MaterialTheme.typography.h2,
             color = MaterialTheme.colors.onBackground,
             textAlign = TextAlign.Left
         )
@@ -203,7 +200,7 @@ fun ImageProductList(url: String) {
         modifier = Modifier
             .fillMaxWidth()
             .height(180.dp)
-            .clip(shape = shapes.small),
+            .clip(shapes.small),
         contentScale = ContentScale.FillBounds,
     )
 }
