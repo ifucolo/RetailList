@@ -14,17 +14,7 @@ jobs:
   gradle:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-java@v2
-        with:
-          java-version: 11
+      - name: Android Github Action
+        uses: Vukan-Markovic/Github-Android-Action@1.
 
-      # Execute Gradle commands in GitHub Actions workflows
-      # => https://github.com/marketplace/actions/gradle-command
-      - uses: eskatos/gradle-command-action@v1
-        with:
-          arguments: runOnGitHub
-          wrapper-cache-enabled: true
-          dependencies-cache-enabled: true
-          configuration-cache-enabled: true
 
