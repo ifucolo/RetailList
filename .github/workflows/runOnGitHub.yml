@@ -15,6 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Android Github Action
-        uses: Vukan-Markovic/Github-Android-Action@1.
+        uses: Vukan-Markovic/Github-Android-Action@1.2
 
 
